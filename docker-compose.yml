@@ -1,0 +1,13 @@
+services:
+  ecoenergy:
+    build: .
+    container_name: ecoenergy-app
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: ${DB_URL}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      APP_USERNAME: ${APP_USERNAME}
+      APP_PASSWORD: ${APP_PASSWORD}
+    restart: unless-stopped
